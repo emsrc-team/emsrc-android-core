@@ -58,6 +58,7 @@ Here, all builds include the wifi logging component, but only phonestudy and rem
 ## Creating a new Logging Component Module
 
 In order to make that smooth component management work, a logging component must be setup correctly:
+* Module name and repository name must be the same
 * Include the _common_ module as a dependency ```implementation project(":common")```
 * Contain a "main" class, implementing the interface _ILoggingComponent_
 * The module's Android Manifest must contain a meta-data entry, registering that "main" class:
@@ -73,6 +74,9 @@ In order to make that smooth component management work, a logging component must
 ```
   The _name_ property must start with _org.emsrc.logging.component._ and end with a unique identifier
   The _value_ property must be the "main" class which implements _ILoggingComponent_
+  
+* In _settings.gradle_ you have to add the new module, so that it becomes available to the project
+* Now you can include it in or more study flavors, see Section Logging Module Inclusion
   
   
   
