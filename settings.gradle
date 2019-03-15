@@ -1,1 +1,1 @@
-include ':core', ':logging_wifireceiver', ':common', ':logging_appusage'
+include ':core', ':emsrc-android-wifi', ':common', ':emsrc-android-appusage'

@@ -55,16 +55,16 @@ dependencies {
     implementation project(":common")
 
     // components that are included in all flavors
-    implementation project(":logging_wifireceiver")
+    implementation project(":emsrc-android-wifi")
 
     // components that phonestudy builds will include
-    phonestudyImplementation project(":logging_appusage")
+    phonestudyImplementation project(":emsrc-android-appusage")
 
     // components that isabella builds include
     // --- no ones yet ----
 
     // components that are included in remap builds
-    remapImplementation project(":logging_appusage")
+    remapImplementation project(":emsrc-android-appusage")
 
     // other dependencies, that everyone needs
     implementation fileTree(dir: 'libs', include: ['*.jar'])
