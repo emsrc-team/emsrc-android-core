@@ -55,6 +55,7 @@ The used study flavor also affects which logging component modules will be compi
     remapImplementation project(":logging_appusage")
 ```
 Here, all builds include the wifi logging component, but only phonestudy and remap additionally include the appusage logging component. This is the single point of configuration, defining which logging components will be compiled + started in the app.
+Only those modules that are included as dependency by the selected study flavor have to be checked out into the project. Others may miss.
 
 ## Creating a new Logging Component Module
 
