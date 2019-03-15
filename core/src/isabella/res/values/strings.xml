@@ -1,0 +1,5 @@
+<resources>
+    <!-- file is used for builds with study-flavor isabella. It is merged with the src/main/res/values/strings.xml file -->
+    <string name="app_name">Isabella</string>
+
+</resources>

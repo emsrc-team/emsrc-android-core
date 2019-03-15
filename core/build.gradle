@@ -1,0 +1,78 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "org.emsrc.core"
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    // one flavor dimension for each study/project, to build an app with e.g. PhoneStudy branding
+    flavorDimensions "study"
+    productFlavors {
+        // here specific gradle configuration can be defined, for each study-flavor
+        // custom sourcesets are used for each study-flavor:
+        // e.g. for PhoneStudy, the files in src/phonestudy will be used (and merged with the ones in src/main)
+        // => a different app name can be defined by setting the app_name property in src/phonestudy/res/values/strings.xml
+        // recommended reading: https://developer.android.com/studio/build/build-variants
+        emsrc {
+            dimension "study"
+            applicationIdSuffix ".emsrc"
+            versionNameSuffix "-emsrc"
+        }
+        remap {
+            dimension "study"
+            applicationIdSuffix ".remap"
+            versionNameSuffix "-remap"
+        }
+        isabella {
+            dimension "study"
+            applicationIdSuffix ".isabella"
+            versionNameSuffix "-isabella"
+        }
+        phonestudy {
+            dimension "study"
+            applicationIdSuffix ".phonestudy"
+            versionNameSuffix "-phonestudy"
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+
+        }
+    }
+}
+
+dependencies {
+    // including the common module, where common interfaces are defined that both core and component modules need
+    implementation project(":common")
+
+    // components that are included in all flavors
+    implementation project(":logging_wifireceiver")
+
+    // components that phonestudy builds will include
+    phonestudyImplementation project(":logging_appusage")
+
+    // components that isabella builds include
+    // --- no ones yet ----
+
+    // components that are included in remap builds
+    remapImplementation project(":logging_appusage")
+
+    // other dependencies, that everyone needs
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support:support-v4:28.0.0'
+    implementation 'com.android.support:design:28.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+}

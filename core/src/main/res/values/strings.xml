@@ -1,0 +1,12 @@
+<resources>
+    <!-- this file applies for all study-flavors, but its properties will be overwritten by the
+    ones defined in the study-flavors correspondent. (e.g. by the ones in src/phonestudy/res/values/strings.xml, in case of a phonestudy build) -->
+    <string name="app_name">EMSRC</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+</resources>
