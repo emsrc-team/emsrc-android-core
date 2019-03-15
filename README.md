@@ -86,3 +86,4 @@ In order to make that smooth component management work, a logging component must
 
 * Customization through sourcesets should be used rarely (especially overriding Java classes can reduce maintainability!)
 * Dependencies, permissions, ... belonging to a logging component should be implemented there. E.g. the _ACCESS_WIFI_ permission should be requested in the _logging_wifi_ module's AndroidManifest.xml, and not in the core's Manifest.
+* use feature branch
