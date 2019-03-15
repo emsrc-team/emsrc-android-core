@@ -12,5 +12,4 @@
 /build
 /captures
 .externalNativeBuild
-/logging_wifireceiver
-/logging_appusage
+emsrc-android-*
