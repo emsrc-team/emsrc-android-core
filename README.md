@@ -7,7 +7,7 @@ This is the Mobile Sensing Android app of the European Mobile Sensing Research C
 
 * Checkout _emsrc-android-core_ project to a folder of your choice ```git clone https://github.com/emsrc-team/emsrc-android-core.git```
 * navigate into the folder that was created on checkout  ```cd emsrc-android-core```
-* Here checkout all other modules' repositories you want to use. E.g. ```git clone https://github.com/emsrc-team/emsrc-android-wifi.git```
+* Here checkout all other modules' repositories you want to use. E.g. ```git clone https://github.com/emsrc-team/emsrc-android-wifi.git``` and ```git clone https://github.com/emsrc-team/emsrc-android-appusage.git```
 
 In order to work properly, it is important that the folders _common_, _core_, and all module folders (e.g. _logging_wifi_) are in the same directory.
 Later you don't have to worry about having multiple repositories in one project, Android Studio handles this fine.
